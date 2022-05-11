@@ -1,0 +1,122 @@
+<html>
+
+<head>
+    <title>Speck</title>
+    <link rel="shortcut icon" href="favicon.png">
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+<div id="render-container">
+    <canvas id="renderer-canvas"></canvas>
+</div>
+
+<div id="controls-container">
+    <div id="controls-render">
+
+        <table>
+            <tr>
+                <td align="right">Модели</td>
+
+                <td>
+                    <select id="controls-sample"></select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Предварительные настройки</td>
+                <td>
+                    <select id="view-preset">
+                        <option value="default">По умолчанию</option>
+                        <option value="stickball">Атомы и соединения</option>
+                        <option value="toon">Засветленный</option>
+                        <option value="licorice">Палочки</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td colspan="10"><hr></td></tr>
+            <tr>
+                <td align="right">Радиус атома</td>
+                <td><input id="atom-radius" type="range" min="1" max="100" value="50" class="control-width"></td>
+                <td id="atom-radius-text"></td>
+                <td class="control-help">a + колесо мыши</td>
+            </tr>
+            <tr>
+                <td align="right">Относительный радиус атома</td>
+                <td><input id="relative-atom-radius" type="range" min="0" max="100" value="100" class="control-width"></td>
+                <td id="relative-atom-radius-text"></td>
+                <td class="control-help">z + колесо мыши</td>
+            </tr>
+            <tr>
+                <td align="right">Насыщенность цвета</td>
+                <td><input id="atom-shade" type="range" min="0" max="100" value="0" class="control-width"></td>
+                <td id="atom-shade-text"></td>
+                <td class="control-help">w + колесо мыши</td>
+            </tr>
+            <tr><td colspan="10"><hr></td></tr>
+            <tr>
+                <td align="right">Связи</td>
+                <td><input type="checkbox" id="bonds"></td>
+            </tr>
+            <tr>
+                <td align="right">Радиус связей</td>
+                <td><input id="bond-radius" type="range" min="0" max="100" value="50" class="control-width"></td>
+                <td id="bond-radius-text"></td>
+                <td class="control-help">b + колесо мыши</td>
+            </tr>
+            <tr>
+                <td align="right">Оттенок связей</td>
+                <td><input id="bond-shade" type="range" min="0" max="100" value="0" class="control-width"></td>
+                <td id="bond-shade-text"></td>
+                <td class="control-help">s + колесо мыши</td>
+            </tr>
+            <tr><td colspan="10"><hr></td></tr>
+            <tr>
+                <td align="right">Видимость текстуры</td>
+                <td><input id="ambient-occlusion" type="range" min="0" max="100" value="50" class="control-width"></td>
+                <td id="ambient-occlusion-text"></td>
+                <td class="control-help">o + колесо мыши</td>
+            </tr>
+            <tr>
+                <td align="right">Яркость</td>
+                <td><input id="brightness" type="range" min="0" max="100" value="50" class="control-width"></td>
+                <td id="brightness-text"></td>
+                <td class="control-help">l + колесо мыши</td>
+            </tr>
+            <tr>
+                <td align="right">Разрешение текстур</td>
+                <td>
+                    <select id="ao-resolution">
+                        <option value="16">16x16</option>
+                        <option value="32">32x32</option>
+                        <option value="64">64x64</option>
+                        <option value="128">128x128</option>
+                        <option value="256">256x256</option>
+                        <option value="512">512x512</option>
+                        <option value="1024">1024x1024</option>
+                        <option value="2048">2048x2048</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <button id="center-button">Центр</button>
+
+    </div>
+
+</div>
+
+<div id="ao-indicator"></div>
+
+<div id="error">
+    <div id="error-text"></div>
+    <br>
+    <button id="close-error">Continue</button>
+</div>
+
+
+</body>
+
+</html>
